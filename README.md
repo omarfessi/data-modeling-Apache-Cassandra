@@ -25,14 +25,14 @@ In modeling with non-relational database one top priority to consider is `what q
 CQL is the way to interact with the database and is very similar to SQL, except JOINS, GROUP BY or subqueries are not supported.
 In the notebook I will be using a Python driver for cassandra. please refer to this [youtube link](https://www.youtube.com/watch?v=XyrDoak3YnI) to properly install cassandra. Once you finish installation pip install cassandra-drive and finally import it in you notebook.
 ### PRIMARY KEY 
-The `PRIMARY KEY` is how each row can be uniquely identified and how data is distributed across the nodes.
-The first element of the `PRIMARY KEY` is the `PARTITION KEY` which will determine the distribution.
-The `PRIMARY KEY` is made up of either just the `PARTITION KEY`-which can single or multiple or with the addition of `CLUSTERING COLUMNS`.
-The `PARTITION KEY`'s row value will be hashed (turned into a number) and stored on the node in the system that holds that range of values.
-The `CLUSTERING COLUMN` will determine the sort within a partition, and will sort the data in `ASC` order. More than one clustering column can be added or none.
-The Clustering columns wol sort in order of how they were added to the primary key
-=> ``` PRIMARY KEY ((Partition Keys),(Clustering Columns))``` <= 
-We can use as many clustering columns as we would like. But we cannot use the clustering columns out of order in the `SELECT` statement. you may choose to omit using a clustering column in the `SELECT` statement. That's Okay.
+- The `PRIMARY KEY` is how each row can be uniquely identified and how data is distributed across the nodes.
+- The first element of the `PRIMARY KEY` is the `PARTITION KEY` which will determine the distribution.
+- The `PRIMARY KEY` is made up of either just the `PARTITION KEY`-which can single or multiple or with the addition of `CLUSTERING COLUMNS`.
+- The `PARTITION KEY`'s row value will be hashed (turned into a number) and stored on the node in the system that holds that range of values.
+- The `CLUSTERING COLUMN` will determine the sort within a partition, and will sort the data in `ASC` order. More than one clustering column can be added or none.
+- The Clustering columns wol sort in order of how they were added to the primary key
+- => ``` PRIMARY KEY ((Partition Keys),(Clustering Columns))``` <= 
+- We can use as many clustering columns as we would like. But we cannot use the clustering columns out of order in the `SELECT` statement. you may choose to omit using a clustering column in the `SELECT` statement. That's Okay.
 
 ## Conclusion
 I think the notebook is well documented and structered so it would be easy to understand.
